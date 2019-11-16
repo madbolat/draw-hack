@@ -25,9 +25,6 @@
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<a class="dropdown-item" href="#"><i class="fas fa-fw fa-sitemap"></i> Мои проект</a>
 							<a class="dropdown-item" href="#"><i class="far fa-fw fa-plus-square"></i> Создать проект</a>
-							<a class="dropdown-item" href="#">Another action</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">Something else here</a>
 						</div>
 					</li>
 					<li class="nav-item">
@@ -35,12 +32,94 @@
 					</li>
 				</ul>
 				<div class="navbar-nav my-2 my-lg-0">
-					<li class="nav-item"><a class="nav-link btn btn-link d-inline my-2 my-sm-0" type="submit">Войти</a></li>
-					<li class="nav-item"><a class="rounded-pill text-warning nav-link btn btn-outline-warning d-inline my-2 my-sm-0" type="submit">Регистрация</a></li>
+					<li class="nav-item"><a class="nav-link btn btn-link d-inline my-2 my-sm-0" type="button" data-toggle="modal" data-target="#signIn">Войти</a></li>
+					<li class="nav-item">
+						<a class="rounded-pill text-warning nav-link btn btn-outline-warning d-inline my-2 my-sm-0" type="button" data-toggle="modal" data-target="#signUp">Регистрация</a></li>
 				</div>
 			</div>
 		</nav>
 		<div class="row">
+		</div>
+	</div>
+
+	<!-- Sign Up -->
+	<div class="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Регистрация</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="form-group">
+							<label for="exampleInputEmail1"><i class="fas fa-user"></i> Логин</label>
+							<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите логин">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputPassword1"><i class="fas fa-lock"></i> Пароль</label>
+							<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Пароль">
+							<small id="emailHelp" class="form-text text-muted">Пароль не должен содержать не меньше 8 символов</small>
+						</div>
+						<hr>
+						<center>
+							<h5>Регистрация через соц-сети</h5>
+							<img src="./img/ulogin.png" alt="">
+						</center>
+						<hr>
+						<div class="form-group form-check">
+							<div class="btn btn-link">
+								<input type="checkbox" class="form-check-input" id="exampleCheck1">
+								<label class="form-check-label" for="exampleCheck1">Запомнить меня</label>
+							</div>
+							<button type="submit" class="btn btn-primary float-right">Регистрация</button>
+							<div class="clearfix"></div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Sign In -->
+	<div class="modal fade" id="signIn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Авторизация</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="" method="POST">
+						<div class="form-group">
+							<label for="exampleInputEmail1"><i class="fas fa-user"></i> Логин</label>
+							<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите логин">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputPassword1"><i class="fas fa-lock"></i> Пароль</label>
+							<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Пароль">
+							<small id="emailHelp" class="form-text text-muted">Пароль не должен содержать не меньше 8 символов</small>
+						</div>
+						<hr>
+						<center>
+							<h5>Войти через соц-сети</h5>
+							<img src="./img/ulogin.png" alt="">
+						</center>
+						<hr>
+						<div class="form-group form-check">
+							<div class="btn btn-link">
+								<input type="checkbox" class="form-check-input" id="exampleCheck1">
+								<label class="form-check-label" for="exampleCheck1">Запомнить меня</label>
+							</div>
+							<button type="submit" class="btn btn-primary float-right">Войти</button>
+							<div class="clearfix"></div>
+						</div>
+					</form>
+				</div>
+			</div>
 		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
