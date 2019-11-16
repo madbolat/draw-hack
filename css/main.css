@@ -2,6 +2,9 @@
 .bg-draw {
 	background: #4233ae !important;
 }
+* {
+	font-family: Open Sans, Roboto, sans-serif !important;
+}
 .navbar-brand {
 	font-family: 'Pacifico', cursive !important;
 }
@@ -22,12 +25,13 @@
 	}
 }
 .btn-create {
-	background: linear-gradient(240deg, #f9d423, #ff4e50, #9d50bb, #6e48aa, #b3ffab, #12fff7);
+	background: linear-gradient(240deg, #4798ee, #fd616f, #8f6fe8, #46aadb, #b3ffab, #d6f022);
 	background-size: 1200% 1200%;
 	animation: animateBg 10s ease infinite;
 	margin: auto;
 	position: relative;
 	z-index: 999;
+	font-weight: bold;
 }
 .btn-create:after {
 	content: '';
@@ -38,5 +42,9 @@
 	height: 100%;
 	background: inherit;
 	z-index: -1;
-	filter: blur(15px);
+	filter: blur(10px);
+}
+.btn-create:hover {
+	opacity: 0.8;
+	transition: 0.3s opacity;
 }
