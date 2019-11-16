@@ -12,7 +12,7 @@ var server = app.listen(process.env.PORT || 3000, listen);
 
 // This call back just tells us that the server has started
 function listen() {
-  var host = 'draw-hack';
+  var host = '10.4.2.102';
   var port = server.address().port;
   console.log('Example app listening at http://' + host + ':' + port);
 }
@@ -31,7 +31,27 @@ io.sockets.on('connection',
   function (socket) {
   
     console.log("We have a new client: " + socket.id);
-  
+
+    //CHAT
+    socket.username = "Анон"
+
+    //listen on change_username
+    socket.on('change_username', (data) => {
+        socket.username = data.username
+    })
+
+    //listen on new_message
+    socket.on('new_message', (data) => {
+        //broadcast the new message
+        io.sockets.emit('new_message', {message : data.message, username : socket.username});
+    })
+
+    //listen on typing
+    socket.on('typing', (data) => {
+      socket.broadcast.emit('typing', {username : socket.username})
+    })
+    //CHAT END
+
     // When this user emits, client side: socket.emit('otherevent',some data);
     socket.on('mouse',
       function(data) {

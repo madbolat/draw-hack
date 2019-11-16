@@ -5,12 +5,13 @@
 	<title>DrawHack</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<script src="https://kit.fontawesome.com/f5f6438ff0.js" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="http://draw-hack/css/main.css">
+	<!-- <link rel="stylesheet" type="text/css" href="style.css" > -->
 </head>
 <body>
 	<div class="container">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-draw rounded py-3 mt-2 shadow">
-			<a class="navbar-brand" href="/">DrawHack</a>
+			<a class="navbar-brand" href="http://draw-hack/">DrawHack</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -24,31 +25,69 @@
 						</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<a class="dropdown-item px-2" href="#"><i class="fas fa-fw fa-sitemap"></i> Мои проект</a>
-							<a class="dropdown-item px-2" href="./#createProject"><i class="far fa-fw fa-plus-square"></i> Создать проект</a>
+							<a class="dropdown-item px-2" href="http://draw-hack/#createProject"><i class="far fa-fw fa-plus-square"></i> Создать проект</a>
 						</div>
 					</li>
 					<li class="nav-item px-2"><a class="nav-link" href="#"><i class="far fa-question-circle"></i> Помощь</a></li>
 					<li class="nav-item px-2"><a class="nav-link" href="#"><i class="fas fa-info"></i> О нас</a></li>
 				</ul>
 				<div class="navbar-nav my-2 my-lg-0">
-					<li class="nav-item"><a class="nav-link btn btn-link d-inline my-2 my-sm-0 p-3" type="button" data-toggle="modal" data-target="#signIn"><i class="fas fa-sign-in-alt"></i> Войти</a></li>
+					<li class="nav-item"><a href="http://draw-hack/#signIn" class="nav-link btn btn-link d-inline my-2 my-sm-0 p-3"><i class="fas fa-sign-in-alt"></i> Войти</a></li>
 					<li class="nav-item">
-						<a class="rounded-pill text-warning nav-link btn btn-outline-warning d-inline my-2 my-sm-0 p-3" type="button" data-toggle="modal" data-target="#signUp"><i class="fas fa-user-plus"></i> Регистрация</a></li>
+						<a href="http://draw-hack/#signUp" class="rounded-pill text-warning nav-link btn btn-outline-warning d-inline my-2 my-sm-0 p-3"><i class="fas fa-user-plus"></i> Регистрация</a></li>
 				</div>
 			</div>
 		</nav>
 		<div class="row pt-4 bg-light mx-1 shadow">
-			<div class="col-md-3">
-				<nav class="list-group">
-					<a href="#" class="list-group-item list-group-item-action mb-3 rounded-pill"><i class="fa fa-fw fa-plus"></i> Новая страница</a>
-					<a href="#" class="list-group-item list-group-item-action rounded-top"><i class="far fa-fw fa-file"></i> Страница 1</a>
-					<a href="#" class="list-group-item list-group-item-action"><i class="far fa-fw fa-file"></i> Страница 2</a>
-					<a href="#" class="list-group-item list-group-item-action"><i class="far fa-fw fa-file"></i> Страница 3</a>
-				</nav>
+			<div class="col-md-4">
+				<div class="accordion" id="leftMenu">
+					<nav class="list-group">
+						<a href="#" class="list-group-item list-group-item-action mb-3 rounded-pill"><i class="fa fa-fw fa-plus"></i> Новая страница</a>
+
+						<div id="projectSettings" class="list-group-item list-group-item-action rounded-top font-weight-bold" type="button" data-toggle="collapse" data-target="#prSett" aria-expanded="true" aria-controls="prSett">
+							<i class="far fa-list-alt"></i> Страницы
+						</div>
+						<small id="prSett" class="collapse show" aria-labelledby="projectSettings" data-parent="#leftMenu">
+							<a href="#" class="list-group-item list-group-item-action rounded-0"><i class="far fa-fw fa-file"></i> Страница 1</a>
+							<a href="#" class="list-group-item list-group-item-action"><i class="far fa-fw fa-file"></i> Страница 2</a>
+							<a href="#" class="list-group-item list-group-item-action"><i class="far fa-fw fa-file"></i> Страница 3</a>
+						</small>
+					</nav>
+
+					<nav class="list-group">
+						<div id="chatHead" class="list-group-item list-group-item-action collapsed mt-3 rounded-top font-weight-bold" type="button" data-toggle="collapse" data-target="#chat" aria-expanded="false" aria-controls="chat">
+							<i class="far fa-comment-dots"></i> Чат
+						</div>
+						<div id="chat" class="collapse p-2 border border-top-0" aria-labelledby="chatHead" data-parent="#leftMenu">
+							<div class="input-group mb-2" id="change_username">
+								<input type="text" class="form-control" id="username" placeholder="Ваше имя">
+								<div class="input-group-append">
+									<button class="btn btn-success" id="send_username" type="button"><i class="fa fa-check"></i></button>
+								</div>
+							</div>
+							<div id="chatroom">
+								<div id="feedback"></div>
+							</div>
+							<div class="input-group" id="input_zone">
+								<input type="text" class="form-control" id="message" placeholder="Сообщение...">
+								<div class="input-group-append">
+									<button class="btn btn-primary" id="send_message" type="button"><i class="fas fa-angle-right"></i></button>
+								</div>
+							</div>
+
+						</div>
+					</nav>
+				</div>
 			</div>
-			<div class="col-md-9">
+			<div class="col-md-8">
 				<!-- TEST -->
-				<div id="sketch-holder"></div>
+				<div class="btn-group bg-light w-100 shadow py-2">
+					<div id="color-picker" class="btn btn-link"></div>
+					<div id="stroke-weight" class="btn btn-link"></div>
+					<div id="radio" class="draw-radio"></div>
+					<div id="clear-btn" class="btn btn-link"></div>
+				</div>
+				<div id="sketch-holder" class="shadow"></div>
 			</div>
 			<div class="col-md-12 m-0 bg-dark mt-3">
 				<nav class="navbar text-light p-4">
@@ -63,146 +102,10 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
 	<script type="text/javascript" src="sketch.js"></script>
 
-	<!-- MODALS -->
-	<!-- Sign Up -->
-	<div class="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="signUpLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="signUpLabel">Регистрация</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<form>
-						<div class="form-group">
-							<label for="signUpLogin"><i class="fas fa-user"></i> Логин</label>
-							<input type="text" class="form-control" id="signUpLogin" placeholder="Введите логин">
-						</div>
-						<div class="form-group">
-							<label for="signUpPassword"><i class="fas fa-lock"></i> Пароль</label>
-							<input type="password" class="form-control" id="signUpPassword" placeholder="Пароль">
-							<small class="form-text text-muted">Пароль не должен содержать не меньше 8 символов</small>
-						</div>
-						<hr>
-						<center>
-							<h5>Регистрация через соц-сети</h5>
-							<img src="./img/ulogin.png">
-						</center>
-						<hr>
-						<div class="form-group form-check">
-							<div class="btn btn-link">
-								<input type="checkbox" class="form-check-input" id="signUpCheck">
-								<label class="form-check-label" for="signUpCheck">Запомнить меня</label>
-							</div>
-							<button type="submit" class="btn btn-primary float-right">Регистрация</button>
-							<div class="clearfix"></div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- END REG-->
-	<!-- Sign In -->
-	<div class="modal fade" id="signIn" tabindex="-1" role="dialog" aria-labelledby="signInLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="signInLabel">Авторизация</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<form action="" method="POST">
-						<div class="form-group">
-							<label for="signInLogin"><i class="fas fa-user"></i> Логин</label>
-							<input type="text" class="form-control" id="signInLogin" placeholder="Введите логин">
-						</div>
-						<div class="form-group">
-							<label for="signInPassword"><i class="fas fa-lock"></i> Пароль</label>
-							<input type="password" class="form-control" id="signInPassword" placeholder="Пароль">
-							<small class="form-text text-muted">Пароль не должен содержать не меньше 8 символов</small>
-						</div>
-						<hr>
-						<center>
-							<h5>Войти через соц-сети</h5>
-							<img src="./img/ulogin.png">
-						</center>
-						<hr>
-						<div class="form-group form-check">
-							<div class="btn btn-link">
-								<input type="checkbox" class="form-check-input" id="signInCheck">
-								<label class="form-check-label" for="signInCheck">Запомнить меня</label>
-							</div>
-							<button type="submit" class="btn btn-primary float-right">Войти</button>
-							<div class="clearfix"></div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Create Project -->
-	<div class="modal fade" id="createProject" tabindex="-1" role="dialog" aria-labelledby="projectLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="projectLabel">Создать проект</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<form action="" method="POST">
-						<div class="form-group">
-							<label for="projectName"><i class="far fa-list-alt"></i> Название проекта</label>
-							<input type="text" class="form-control" id="projectName" placeholder="Название проекта">
-						</div>
-						<div class="form-group">
-							<label for="projectDescription"><i class="far fa-file-alt"></i> Описание</label>
-							<textarea id="projectDescription" class="form-control"></textarea>
-						</div>
-						<label><i class="far fa-image"></i> Размер холста (ширина x высота)</label>
-						<div class="input-group mb-3" style="max-width: 200px;margin: 0 auto">
-							<input class="form-control">
-							<div class="input-group-append "><span class="input-group-text border-right-0">x</span></div>
-							<input class="form-control">
-							<div class="input-group-append"><span class="input-group-text">px</span></div>
-						</div>
-						<div class="col-sm-12">
-							<hr>
-							<div class="card-columns">
-									<label class="card md-radio">
-										<h6 class="card-title p-1 m-0">Обычный</h6>
-										<div class="card-body" style="background: #fff;">
-												<input type="radio" name="bg" value="1" class="invisible">
-											<span>&nbsp;</span>
-										</div>
-									</label>
-									<label class="card md-radio">
-										<h6 class="card-title p-1 m-0">Тетрадь</h6>
-										<div class="card-body" style="background: url('./img/bg_list.png') repeat;">
-												<input type="radio" name="bg" value="2" class="invisible">
-											<span>&nbsp;</span>
-										</div>
-									</label>
-							</div>
-							<hr>
-						</div>
-						<div class="form-group">
-							<button type="submit" class="btn btn-success float-right">Создать</button>
-							<div class="clearfix"></div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
+	<!-- KKKK -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="chat.js"></script>
 </body>
 </html>

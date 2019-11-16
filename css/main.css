@@ -64,3 +64,44 @@ body {
 	background: rgba(0,0,0,0.1);
 	box-shadow: 0 0 .5em rgba(0,0,0,0.5);
 }
+#color-picker input {
+	height: 25px;
+	margin-top: 8px;
+	background: transparent;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	border-radius: 999rem;
+}
+#stroke-weight {
+	margin-top: 8px;
+}
+#chatroom {
+	height: 200px;
+	overflow-y: scroll;
+}
+.mess:nth-child(even) {
+    background-color: #BDDFEA;
+}
+
+.mess:nth-child(odd) {
+    background-color: #F9C6CB;
+}
+.draw-radio input {
+	display: none;
+}
+.draw-radio {
+	position: relative;
+}
+.draw-radio label {
+	padding: 8px 15px;
+	margin-top: 5px;
+	border-radius: 999rem;
+}
+.draw-radio input:checked + label {
+	background: #6855f0;
+	color: #fff;
+}
+#sketch-holder {
+	z-index: 999;
+}
