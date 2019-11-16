@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+.bg-draw {
+	background: #4233ae !important;
+}
+.navbar-brand {
+	font-family: 'Pacifico', cursive !important;
+}
