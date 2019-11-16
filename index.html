@@ -23,31 +23,63 @@
 							<i class="fas fa-bars"></i> Проект
 						</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#"><i class="fas fa-fw fa-sitemap"></i> Мои проект</a>
-							<a class="dropdown-item" href="#"><i class="far fa-fw fa-plus-square"></i> Создать проект</a>
+							<a class="dropdown-item px-2" href="#"><i class="fas fa-fw fa-sitemap"></i> Мои проект</a>
+							<a class="dropdown-item px-2" href="#createProject" type="button" data-toggle="modal" data-target="#createProject"><i class="far fa-fw fa-plus-square"></i> Создать проект</a>
 						</div>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-					</li>
+					<li class="nav-item px-2"><a class="nav-link" href="#"><i class="far fa-question-circle"></i> Помощь</a></li>
+					<li class="nav-item px-2"><a class="nav-link" href="#"><i class="fas fa-info"></i> О нас</a></li>
 				</ul>
 				<div class="navbar-nav my-2 my-lg-0">
-					<li class="nav-item"><a class="nav-link btn btn-link d-inline my-2 my-sm-0" type="button" data-toggle="modal" data-target="#signIn">Войти</a></li>
+					<li class="nav-item"><a class="nav-link btn btn-link d-inline my-2 my-sm-0" type="button" data-toggle="modal" data-target="#signIn"><i class="fas fa-sign-in-alt"></i> Войти</a></li>
 					<li class="nav-item">
-						<a class="rounded-pill text-warning nav-link btn btn-outline-warning d-inline my-2 my-sm-0" type="button" data-toggle="modal" data-target="#signUp">Регистрация</a></li>
+						<a class="rounded-pill text-warning nav-link btn btn-outline-warning d-inline my-2 my-sm-0" type="button" data-toggle="modal" data-target="#signUp"><i class="fas fa-user-plus"></i> Регистрация</a></li>
 				</div>
 			</div>
 		</nav>
-		<div class="row">
+		<div class="row mt-4">
+			<div class="col-md-3">
+				<nav class="list-group">
+					<a href="#" class="list-group-item list-group-item-action rounded-pill mt-2 mb-3 btn-create" type="button" data-toggle="modal" data-target="#createProject"><i class="far fa-fw fa-plus-square"></i> Создать проект</a>
+					<a href="#" class="list-group-item list-group-item-action rounded-top"><i class="fas fa-fw fa-history"></i> Последние</a>
+					<a href="#" class="list-group-item list-group-item-action"><i class="far fa-fw fa-star"></i> Закладки</a>
+					<a href="#" class="list-group-item list-group-item-action"><i class="far fa-fw fa-trash-alt"></i> Корзина</a>
+				</nav>
+			</div>
+			<div class="col-md-9">
+				<div class="card-deck">
+					<a href="#" class="card card-draw">
+						<img src="./img/pr00.png" class="card-img-top">
+						<div class="card-body">
+							<h5 class="card-title">Hello</h5>
+							<p class="card-text"><small class="text-muted">Обновлено 3 минуты назад</small></p>
+						</div>
+					</a>
+					<a href="#" class="card card-draw">
+						<img src="./img/pr01.png" class="card-img-top">
+						<div class="card-body">
+							<h5 class="card-title">Раскадровки</h5>
+							<p class="card-text"><small class="text-muted">Обновлен 6 часов назад</small></p>
+						</div>
+					</a>
+					<a href="#" class="card card-draw">
+						<img src="./img/pr02.png" class="card-img-top">
+						<div class="card-body">
+							<h5 class="card-title">Новый проект</h5>
+							<p class="card-text"><small class="text-muted">Обновлен 13 часов назад</small></p>
+						</div>
+					</a>
+				</div>
+			</div>
 		</div>
 	</div>
 
 	<!-- Sign Up -->
-	<div class="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="signUpLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Регистрация</h5>
+					<h5 class="modal-title" id="signUpLabel">Регистрация</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -55,24 +87,24 @@
 				<div class="modal-body">
 					<form>
 						<div class="form-group">
-							<label for="exampleInputEmail1"><i class="fas fa-user"></i> Логин</label>
-							<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите логин">
+							<label for="signUpLogin"><i class="fas fa-user"></i> Логин</label>
+							<input type="text" class="form-control" id="signUpLogin" placeholder="Введите логин">
 						</div>
 						<div class="form-group">
-							<label for="exampleInputPassword1"><i class="fas fa-lock"></i> Пароль</label>
-							<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Пароль">
-							<small id="emailHelp" class="form-text text-muted">Пароль не должен содержать не меньше 8 символов</small>
+							<label for="signUpPassword"><i class="fas fa-lock"></i> Пароль</label>
+							<input type="password" class="form-control" id="signUpPassword" placeholder="Пароль">
+							<small class="form-text text-muted">Пароль не должен содержать не меньше 8 символов</small>
 						</div>
 						<hr>
 						<center>
 							<h5>Регистрация через соц-сети</h5>
-							<img src="./img/ulogin.png" alt="">
+							<img src="./img/ulogin.png">
 						</center>
 						<hr>
 						<div class="form-group form-check">
 							<div class="btn btn-link">
-								<input type="checkbox" class="form-check-input" id="exampleCheck1">
-								<label class="form-check-label" for="exampleCheck1">Запомнить меня</label>
+								<input type="checkbox" class="form-check-input" id="signUpCheck">
+								<label class="form-check-label" for="signUpCheck">Запомнить меня</label>
 							</div>
 							<button type="submit" class="btn btn-primary float-right">Регистрация</button>
 							<div class="clearfix"></div>
@@ -82,12 +114,13 @@
 			</div>
 		</div>
 	</div>
+	<!-- END REG-->
 	<!-- Sign In -->
-	<div class="modal fade" id="signIn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade" id="signIn" tabindex="-1" role="dialog" aria-labelledby="signInLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Авторизация</h5>
+					<h5 class="modal-title" id="signInLabel">Авторизация</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -95,26 +128,62 @@
 				<div class="modal-body">
 					<form action="" method="POST">
 						<div class="form-group">
-							<label for="exampleInputEmail1"><i class="fas fa-user"></i> Логин</label>
-							<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите логин">
+							<label for="signInLogin"><i class="fas fa-user"></i> Логин</label>
+							<input type="text" class="form-control" id="signInLogin" placeholder="Введите логин">
 						</div>
 						<div class="form-group">
-							<label for="exampleInputPassword1"><i class="fas fa-lock"></i> Пароль</label>
-							<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Пароль">
-							<small id="emailHelp" class="form-text text-muted">Пароль не должен содержать не меньше 8 символов</small>
+							<label for="signInPassword"><i class="fas fa-lock"></i> Пароль</label>
+							<input type="password" class="form-control" id="signInPassword" placeholder="Пароль">
+							<small class="form-text text-muted">Пароль не должен содержать не меньше 8 символов</small>
 						</div>
 						<hr>
 						<center>
 							<h5>Войти через соц-сети</h5>
-							<img src="./img/ulogin.png" alt="">
+							<img src="./img/ulogin.png">
 						</center>
 						<hr>
 						<div class="form-group form-check">
 							<div class="btn btn-link">
-								<input type="checkbox" class="form-check-input" id="exampleCheck1">
-								<label class="form-check-label" for="exampleCheck1">Запомнить меня</label>
+								<input type="checkbox" class="form-check-input" id="signInCheck">
+								<label class="form-check-label" for="signInCheck">Запомнить меня</label>
 							</div>
 							<button type="submit" class="btn btn-primary float-right">Войти</button>
+							<div class="clearfix"></div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Create Project -->
+	<div class="modal fade" id="createProject" tabindex="-1" role="dialog" aria-labelledby="projectLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="projectLabel">Создать проект</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="" method="POST">
+						<div class="form-group">
+							<label for="projectName"><i class="far fa-list-alt"></i> Название проекта</label>
+							<input type="text" class="form-control" id="projectName" placeholder="Название проекта">
+						</div>
+						<div class="form-group">
+							<label for="projectDescription"><i class="far fa-file-alt"></i> Описание</label>
+							<textarea id="projectDescription" class="form-control"></textarea>
+						</div>
+						<label><i class="far fa-image"></i> Размер холста (ширина x высота)</label>
+						<div class="input-group mb-3" style="max-width: 200px;margin: 0 auto">
+							<input class="form-control">
+							<div class="input-group-append "><span class="input-group-text border-right-0">x</span></div>
+							<input class="form-control">
+							<div class="input-group-append"><span class="input-group-text">px</span></div>
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-success float-right">Войти</button>
 							<div class="clearfix"></div>
 						</div>
 					</form>
