@@ -2,16 +2,21 @@
 .bg-draw {
 	background: #4233ae !important;
 }
-* {
+body {
 	font-family: Open Sans, Roboto, sans-serif !important;
 }
 .navbar-brand {
 	font-family: 'Pacifico', cursive !important;
 }
+.card-draw {
+	border:none!important;
+	box-shadow: 0 0 .7em #d9d9d9;
+	transition: 0.3s;
+}
 .card-draw:hover {
 	text-decoration: none !important;
-	box-shadow: 0 0 1em #d9d9d9;
-	transition: 0.3s box-shadow;
+	box-shadow: 0 0 1.3em #959595;
+	transform: scale(1.01);
 }
 @keyframes animateBg {
 	0% {
@@ -47,4 +52,15 @@
 .btn-create:hover {
 	opacity: 0.8;
 	transition: 0.3s opacity;
+}
+.md-radio {
+	position: relative;
+	transition: 0.3s;
+}
+
+.md-radio input:checked + span {
+	position: absolute;
+	top: 0; bottom: 0; left: 0; right: 0;
+	background: rgba(0,0,0,0.1);
+	box-shadow: 0 0 .5em rgba(0,0,0,0.5);
 }
