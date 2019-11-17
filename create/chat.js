@@ -10,8 +10,6 @@ $(function(){
 	var send_username = $("#send_username")
 	var chatroom = $("#chatroom")
 	var feedback = $("#feedback")
-	var cdate = new Date();
- 	var time = cdate.getHours() + ":" + cdate.getMinutes() + ":" + cdate.getSeconds();
 
 	//Emit message
 	send_message.click(function(){
@@ -22,6 +20,8 @@ $(function(){
 	socket.on("new_message", (data) => {
 		feedback.html('');
 		message.val('');
+		var cdate = new Date();
+	 	var time = cdate.getHours() + ":" + cdate.getMinutes() + ":" + cdate.getSeconds();
 		chatroom.append("<div class='mess list-group-item list-group-item-action'><b><i class='far fa-fw fa-user'></i>" + data.username + "</b> "+time+"<br> " + data.message + "</div>")
 	})
 

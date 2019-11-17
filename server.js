@@ -1,7 +1,3 @@
-// Based off of Shawn Van Every's Live Web
-// http://itp.nyu.edu/~sve204/liveweb_fall2013/week3.html
-
-// Using express: http://expressjs.com/
 var express = require('express');
 // Create the app
 var app = express();
@@ -64,6 +60,12 @@ io.sockets.on('connection',
         // This is a way to send to everyone including sender
         // io.sockets.emit('message', "this goes to everyone");
 
+      }
+    );
+
+    socket.on('clearCanvas',
+      function(data) {
+        socket.broadcast.emit('clearCanvas', data);
       }
     );
     

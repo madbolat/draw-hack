@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DrawHack</title>
+	<link rel="stylesheet" href="/create/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/create/css/main.css">
+	<script src="https://kit.fontawesome.com/f5f6438ff0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-draw rounded py-3 mt-2 shadow">
+			<a class="navbar-brand" href="/">DrawHack</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item px-2"><a class="nav-link" href="#"><i class="far fa-question-circle"></i> Помощь</a></li>
+					<li class="nav-item px-2"><a class="nav-link" href="#"><i class="fas fa-info"></i> О нас</a></li>
+				</ul>
+				<div class="navbar-nav my-2 my-lg-0">
+					
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<img src="/create/img/ava.png" alt="User" width="35px" class="rounded-pill shadow">
+						</a>
+						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="/projects"><i class="fas fa-fw fa-sitemap"></i> Мои проект</a>
+							<a class="dropdown-item" href="#createProject" type="button" data-toggle="modal" data-target="#createProject"><i class="far fa-fw fa-plus-square"></i> Создать проект</a>
+							<a class="dropdown-item" href="#"><i class="fas fa-fw fa-cogs"></i> Настройки</a>
+							<a class="dropdown-item" href="/"><i class="fas fa-fw fa-sign-out-alt"></i> Выйти</a>
+						</div>
+					</li>
+				</div>
+			</div>
+		</nav>
+		<div class="row pt-4 bg-light mx-1 shadow">
+			<div class="col-md-3">
+				<nav class="list-group">
+					<a href="#" class="list-group-item list-group-item-action rounded-pill mt-2 mb-3 btn-create" type="button" data-toggle="modal" data-target="#createProject"><i class="far fa-fw fa-plus-square"></i> Создать проект</a>
+					<a href="#" class="list-group-item list-group-item-action rounded-top"><i class="fas fa-fw fa-history"></i> Последние</a>
+					<a href="#" class="list-group-item list-group-item-action"><i class="far fa-fw fa-star"></i> Закладки</a>
+					<a href="#" class="list-group-item list-group-item-action"><i class="fas fa-fw fa-sliders-h"></i> Настроить доступ</a>
+					<a href="#" class="list-group-item list-group-item-action"><i class="far fa-fw fa-trash-alt"></i> Корзина</a>
+				</nav>
+			</div>
+			<div class="col-md-9">
+				<div class="card-deck mb-4">
+					<a href="#" class="card card-draw">
+						<img src="/create/img/pr00.png" class="card-img-top">
+						<div class="card-body">
+							<h5 class="card-title">Hello</h5>
+							<p class="card-text"><small class="text-muted">Обновлено 3 минуты назад</small></p>
+						</div>
+					</a>
+					<a href="#" class="card card-draw">
+						<img src="/create/img/pr01.png" class="card-img-top">
+						<div class="card-body">
+							<h5 class="card-title">Раскадровки</h5>
+							<p class="card-text"><small class="text-muted">Обновлен 6 часов назад</small></p>
+						</div>
+					</a>
+					<a href="#" class="card card-draw">
+						<img src="/create/img/pr02.png" class="card-img-top">
+						<div class="card-body">
+							<h5 class="card-title">Новый проект</h5>
+							<p class="card-text"><small class="text-muted">Обновлен 13 часов назад</small></p>
+						</div>
+					</a>
+				</div>
+				<div class="card-deck mb-4">
+					<a href="#" class="card card-draw">
+						<img src="/create/img/pr03.png" class="card-img-top">
+						<div class="card-body">
+							<h5 class="card-title">Boy</h5>
+							<p class="card-text"><small class="text-muted">Обновлено 15 часов назад</small></p>
+						</div>
+					</a>
+					<a href="#" class="card card-draw" type="button" data-toggle="modal" data-target="#createProject">
+						<img src="/create/img/addbtn.png" class="card-img-top">
+						<div class="card-body">
+							<h5 class="card-title">Создать проект</h5>
+							<p class="card-text"><small class="text-muted"></small></p>
+						</div>
+					</a>
+					<div class="card border-0 bg-transparent"></div>
+				</div>
+			</div>
+			<div class="col-md-12 m-0 bg-dark mt-3">
+				<nav class="navbar text-light p-4">
+					<h6 class="mx-auto">&copy; Team #1, 2019</h6>
+				</nav>
+			</div>
+		</div>
+	</div>
+
+	<!-- MODALS -->
+	<!-- Create Project -->
+	<div class="modal fade" id="createProject" tabindex="-1" role="dialog" aria-labelledby="projectLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="projectLabel">Создать проект</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="http://draw-hack/create" method="POST">
+						<div class="row">
+							<div class="col-md-6 form-group">
+								<label for="projectName"><i class="far fa-list-alt"></i> Название проекта</label>
+								<input type="text" class="form-control" id="projectName" placeholder="Название проекта">
+							</div>
+							<div class="col-md-6">
+								<label><i class="far fa-image"></i> Размер холста</label>
+								<div class="input-group mb-3" style="max-width: 200px;margin: 0 auto">
+									<input class="form-control">
+									<div class="input-group-append "><span class="input-group-text border-0 bg-transparent">x</span></div>
+									<input class="form-control">
+									<div class="input-group-append"><span class="input-group-text">px</span></div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="projectDescription"><i class="far fa-file-alt"></i> Описание</label>
+							<textarea id="projectDescription" class="form-control"></textarea>
+						</div>
+						<div class="col-sm-12">
+							<hr>
+							<div class="card-columns">
+								<label class="card md-radio shadow-sm">
+									<h6 class="card-title p-1 m-0">Обычный</h6>
+									<div class="card-body" style="background: #fff;">
+										<input type="radio" name="bg" value="1" class="invisible">
+										<span>&nbsp;</span>
+									</div>
+								</label>
+								<label class="card md-radio shadow-sm">
+									<h6 class="card-title p-1 m-0">Тетрадь</h6>
+									<div class="card-body" style="background: url('/create/img/bg_list.png') repeat;">
+										<input type="radio" name="bg" value="2" class="invisible">
+										<span>&nbsp;</span>
+									</div>
+								</label>
+								<label class="card md-radio shadow-sm">
+									<h6 class="card-title p-1 m-0">Миллиметровка</h6>
+									<div class="card-body" style="background: url('/create/img/bg_milli.png') repeat;">
+										<input type="radio" name="bg" value="2" class="invisible">
+										<span>&nbsp;</span>
+									</div>
+								</label>
+							</div>
+							<hr>
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-success float-right">Создать</button>
+							<div class="clearfix"></div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="/create/js/jquery-3.3.1.slim.min.js"></script>
+	<script src="/create/js/popper.min.js"></script>
+	<script src="/create/js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			if(window.location.href.indexOf('#createProject') != -1) {
+				$('#createProject').modal('show');
+			}
+		});
+	</script>
+</body>
+</html>
