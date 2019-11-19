@@ -1,7 +1,6 @@
-
 $(function(){
    	//make connection
-	var socket = io.connect('http://10.4.2.102:3000')
+	var socket = io.connect('http://draw-hack:3000')
 
 	//buttons and inputs
 	var message = $("#message")
@@ -40,5 +39,3 @@ $(function(){
 		feedback.html("<p class='text-muted px-2 font-italic'><i class='fas fa-pen'></i><b>" + data.username + "</b> печатает..." + "</p>")
 	})
 });
-
-
