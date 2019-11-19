@@ -5,9 +5,9 @@
 ![screen2](https://raw.githubusercontent.com/zxmad/draw-hack/master/screen/2.png)
 ![screen3](https://raw.githubusercontent.com/zxmad/draw-hack/master/screen/3.png)
 # Stack
-* [node.js]
-* [Express]
-* [socket.io]
-* [p5.js]
-* [Bootstrap 4]
-* [FontAwesome]
+* Node.js
+* Express
+* Socket.IO
+* p5.js
+* Bootstrap 4
+* FontAwesome
