@@ -4,6 +4,12 @@
 ![screen1](https://raw.githubusercontent.com/zxmad/draw-hack/master/screen/1.png)
 ![screen2](https://raw.githubusercontent.com/zxmad/draw-hack/master/screen/2.png)
 ![screen3](https://raw.githubusercontent.com/zxmad/draw-hack/master/screen/3.png)
+
+# Team  
+* @madbolat  
+* @FlashFox12  
+* SBEKzy  
+
 # Stack
 * Node.js
 * Express
